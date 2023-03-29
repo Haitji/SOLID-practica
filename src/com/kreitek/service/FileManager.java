@@ -9,17 +9,8 @@ import java.util.List;
 public class FileManager {
 
     public static int calculateSize(FileSystemItem fileSystemItem) {
-        int totalSize = 0;
-
-        if (fileSystemItem instanceof File) {
-            totalSize = fileSystemItem.getSize();
-        } else if (fileSystemItem instanceof Directory) {
-            for (FileSystemItem item : fileSystemItem.listFiles()) {
-                totalSize += calculateSize(item);
-            }
-        }
-
-        return totalSize;
+        //Aqui incumplia el principio de abierto cerrado, porque usabamos una cadena de ifs en lugar de hacer un metodo abstracto.
+        return fileSystemItem.getSize();
     }
 
     public static int calculateSize(List<FileSystemItem> files) {

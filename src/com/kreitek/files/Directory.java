@@ -8,6 +8,8 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
     private static final String NO_ES_VALIDO_PARA_DIRECTORIOS = "No es válido para directorios";
     private final List<FileSystemItem> files;
 
+    private int size=0;
+
     public Directory(FileSystemItem parent, String name) {
         super(parent, name);
         files = new ArrayList<>();
@@ -39,7 +41,12 @@ public class Directory extends FileSystemItemBase implements FileSystemItem {
 
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException(NO_ES_VALIDO_PARA_DIRECTORIOS);
+        int tam=0;
+        for(FileSystemItem item : files){
+            tam+=item.getSize();
+        }
+        size=tam;
+        return size;
     }
 
     @Override
