@@ -23,5 +23,4 @@ public interface FileSystemItem {
     byte[] read(int numberOfBytesToRead);
     void write(byte[] buffer);
 
-
 }
