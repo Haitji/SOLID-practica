@@ -2,7 +2,7 @@ package com.kreitek.files;
 
 import java.util.List;
 
-public interface FileSystemItem {
+public interface FileSystemItem{
     /*
      Aqui estamos incumpliendo el principio de segregación de interfaces, porque esta interfaz esta gestionando tanto a los directorio como a
      los ficheros, y por ente hay varios métodos que solo se puede usar en una clase y en la otra no.
