@@ -15,3 +15,9 @@ Incumplimiento del **Principio de sustitucion de Liskov**
 -----------------------------------------------------------
 
 En el fichero o clase **FileSystemItemBase** le hereda 2 clases, Directory y File, pero uno no puede sustituir al otro en ninguna situación, asi que incumple este principio.
+
+
+Incumplimiento del **Principio de Respopnsabilidad unica**
+-----------------------------------------------------------
+
+Incumple este principio porque en la clase **File** hace como gestor de file y también hace de conversor .mp3 .
