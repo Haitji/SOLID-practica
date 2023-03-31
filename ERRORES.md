@@ -3,19 +3,20 @@ Haitian Ji
 
 getSize() arreglado
 ---------------------
-Me percate de que en **FileManager** estaba incumpliendo en *Principio de abierto y cerrado*, porque usa una cadena de ifs en lugar de usar un método abstracto.  
+Me percate de que en **FileManager** estaba incumpliendo en *Principio de abierto y cerrado*, porque usa una cadena de ifs en lugar de usar un método abstracto.
 Y que al usar el método abstracto hemos podido ahorrar lineas de codigo.
 
 Incumplimiento de **Principio Segregación de Interfaces**
 -----------------------------------------------------------
 
-En la interfaz de **FileSystemItem** incumple con este principio porque hay métodos que no se usa, por ejemplo en file no usa algunos métodos de directorio, y a la viceversa.  
+En la interfaz de **FileSystemItem** incumple con este principio porque hay métodos que no se usa, por ejemplo en file no puede usa algunos métodos que usa directorio, y a la viceversa.  
 -He intentado solucionarlo separando métodos de la interfaz en 3 interfaces pero al intentarlo me saltaba error por todos los lados.
 
 Incumplimiento del **Principio de sustitucion de Liskov**
 -----------------------------------------------------------
 
-En el fichero o clase **FileSystemItemBase** le hereda 2 clases, Directory y File, pero uno no puede sustituir al otro en ninguna situación, asi que incumple este principio.  
+En el fichero o clase **FileSystemItemBase** le hereda 2 clases, Directory y File, pero uno no puede sustituir al otro porque las clases heredadas saltan errores que en la clase padre no salta.  
+Por ejemplo: si ejecutamos open, en la clase file lo puede ejecutar mientras que en directory salta una excepción.
 
 
 Incumplimiento del **Principio de Responsabilidad unica**
